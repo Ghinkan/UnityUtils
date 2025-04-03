@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace UnityUtils.QuestSystem
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "NewQuest", menuName = "QuestSystem")]
     public class Quest : ScriptableObject
     {
         public event UnityAction OnQuestCompleted;

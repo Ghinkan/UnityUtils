@@ -45,7 +45,7 @@ namespace UnityUtils.AudioSystem
             if (soundData.FrequentSound)
                 _soundManager.FrequentSoundEmitters.Enqueue(soundEmitter);
 
-            soundEmitter._audioSource.volume = _soundManager.TargetVolume;
+            soundEmitter.AudioSource.volume = _soundManager.TargetVolume;
             soundEmitter.Play();
         }
     }

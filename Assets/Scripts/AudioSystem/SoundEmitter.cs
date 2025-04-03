@@ -6,43 +6,43 @@ namespace UnityUtils.AudioSystem
     public class SoundEmitter : MonoBehaviour
     {
         public SoundData Data { get; private set; }
-        public AudioSource _audioSource;
+        public AudioSource AudioSource;
         private Coroutine _playingCoroutine;
 
         private void Awake()
         {
-            _audioSource = gameObject.GetOrAdd<AudioSource>();
+            AudioSource = gameObject.GetOrAdd<AudioSource>();
         }
 
         public void Initialize(SoundData data)
         {
             Data = data;
-            _audioSource.clip = data.Clip;
-            _audioSource.outputAudioMixerGroup = data.MixerGroup;
-            _audioSource.loop = data.Loop;
-            _audioSource.playOnAwake = data.PlayOnAwake;
+            AudioSource.clip = data.Clip;
+            AudioSource.outputAudioMixerGroup = data.MixerGroup;
+            AudioSource.loop = data.Loop;
+            AudioSource.playOnAwake = data.PlayOnAwake;
 
-            _audioSource.mute = data.Mute;
-            _audioSource.bypassEffects = data.BypassEffects;
-            _audioSource.bypassListenerEffects = data.BypassListenerEffects;
-            _audioSource.bypassReverbZones = data.BypassReverbZones;
+            AudioSource.mute = data.Mute;
+            AudioSource.bypassEffects = data.BypassEffects;
+            AudioSource.bypassListenerEffects = data.BypassListenerEffects;
+            AudioSource.bypassReverbZones = data.BypassReverbZones;
 
-            _audioSource.priority = data.Priority;
-            _audioSource.volume = data.Volume;
-            _audioSource.pitch = data.Pitch;
-            _audioSource.panStereo = data.PanStereo;
-            _audioSource.spatialBlend = data.SpatialBlend;
-            _audioSource.reverbZoneMix = data.ReverbZoneMix;
-            _audioSource.dopplerLevel = data.DopplerLevel;
-            _audioSource.spread = data.Spread;
+            AudioSource.priority = data.Priority;
+            AudioSource.volume = data.Volume;
+            AudioSource.pitch = data.Pitch;
+            AudioSource.panStereo = data.PanStereo;
+            AudioSource.spatialBlend = data.SpatialBlend;
+            AudioSource.reverbZoneMix = data.ReverbZoneMix;
+            AudioSource.dopplerLevel = data.DopplerLevel;
+            AudioSource.spread = data.Spread;
 
-            _audioSource.minDistance = data.MinDistance;
-            _audioSource.maxDistance = data.MaxDistance;
+            AudioSource.minDistance = data.MinDistance;
+            AudioSource.maxDistance = data.MaxDistance;
 
-            _audioSource.ignoreListenerVolume = data.IgnoreListenerVolume;
-            _audioSource.ignoreListenerPause = data.IgnoreListenerPause;
+            AudioSource.ignoreListenerVolume = data.IgnoreListenerVolume;
+            AudioSource.ignoreListenerPause = data.IgnoreListenerPause;
 
-            _audioSource.rolloffMode = data.RolloffMode;
+            AudioSource.rolloffMode = data.RolloffMode;
         }
 
         public void Play()
@@ -50,13 +50,13 @@ namespace UnityUtils.AudioSystem
             if (_playingCoroutine != null)
                 StopCoroutine(_playingCoroutine);
 
-            _audioSource.Play();
+            AudioSource.Play();
             _playingCoroutine = StartCoroutine(WaitForSoundToEnd());
         }
 
         private IEnumerator WaitForSoundToEnd()
         {
-            yield return new WaitWhile(() => _audioSource.isPlaying);
+            yield return new WaitWhile(() => AudioSource.isPlaying);
             Stop();
         }
 
@@ -68,13 +68,13 @@ namespace UnityUtils.AudioSystem
                 _playingCoroutine = null;
             }
 
-            _audioSource.Stop();
+            AudioSource.Stop();
             SoundManager.Instance.ReturnToPool(this);
         }
 
         public void WithRandomPitch(float min = -0.05f, float max = 0.05f)
         {
-            _audioSource.pitch += Random.Range(min, max);
+            AudioSource.pitch += Random.Range(min, max);
         }
     }
 }

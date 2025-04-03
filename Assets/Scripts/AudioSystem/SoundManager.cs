@@ -89,7 +89,7 @@ namespace UnityUtils.AudioSystem
         {
             soundEmitter.gameObject.SetActive(true);
             ActiveSoundEmitters.Add(soundEmitter);
-            soundEmitter._audioSource.volume = TargetVolume;
+            soundEmitter.AudioSource.volume = TargetVolume;
         }
 
         private void OnReturnedToPool(SoundEmitter soundEmitter)

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 namespace UnityUtils.QuestSystem
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "QuestManager", menuName = "QuestSystem", order = 1)]
     public class QuestManager : ScriptableObject
     {
         public event UnityAction OnAllQuestCompleted;

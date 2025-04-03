@@ -43,6 +43,5 @@ namespace UnityUtils.QuestSystem
             else
                 _questText.text = _questManager.ActiveQuest.QuestDescription;
         }
-
     }
 }
