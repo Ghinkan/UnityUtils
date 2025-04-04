@@ -24,6 +24,9 @@ A comprehensive system to manage and track quests and objectives in the game. Th
 ### ServiceLocator
 A simple implementation of the **Service Locator** pattern for managing game services in Unity. It provides a centralized way to access services from anywhere in the code.
 
+- Stores and retrieves instances of services implementing `IGameService`.
+- Ensures global access to registered services without direct dependencies.
+
 ### StateMachine
 A simple state machine implementation for Unity that manages transitions between various game states.
 
@@ -43,6 +46,10 @@ A generic **MonoBehaviour Singleton**. It simplifies the creation of unique inst
 
 ### RuntimeScriptableObject
 An abstract base class for **ScriptableObject** instances that need to be reset at the start of the game.
+
+- Keeps track of all active instances.
+- Automatically resets all instances before the scene loads.
+- Provides an `OnReset` method that derived classes must implement for custom reset behavior.
 
 ### TagSelectorAttribute
 A custom property attribute that allows you to select tags from a dropdown list in the Unity Inspector, instead of manually typing them as strings.
