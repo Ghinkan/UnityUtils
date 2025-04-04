@@ -1,6 +1,6 @@
 # UnityUtils
 
-UnityUtils is a growing collection of extension methods, helpers, attributes, and other utilities designed to enhance and simplify your Unity development workflow.
+UnityUtils is a growing collection of extension methods, helpers, attributes, and other utilities designed to enhance and simplifyUnity development workflow.
 
 ## Features
 
