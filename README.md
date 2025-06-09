@@ -53,3 +53,11 @@ An abstract base class for **ScriptableObject** instances that need to be reset 
 
 ### TagSelectorAttribute
 A custom property attribute that allows you to select tags from a dropdown list in the Unity Inspector, instead of manually typing them as strings.
+
+### FlexibleGridLayout
+A custom layout group for dynamic and responsive UI grids:
+
+- Supports `Uniform`, `Width`, `Height`, `FixedRows`, and `FixedColumns` fitting modes.
+- Automatically calculates rows and columns based on children.
+- Configurable cell size, spacing, and alignment.
+- Ideal for inventory systems, photo galleries, and dynamic UI panels.
